@@ -39,6 +39,7 @@
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
                 <th scope="col">viewCount</th>
+                <th scope="col">Comment</th>
               </tr>
             </thead>
             {% if data %}
@@ -46,10 +47,13 @@
               {% for item in data %}
               <tr>
                 <td>{{ item.video_id }}</td>
-                <td>{{ item.channelTitle }}</td>
-                <td>{{ item.title }}</td>
+                <td>{{ item.channel_title }}</td>
+                <td>{{ item.video_title }}</td>
                 <td>{{ item.description|truncatechars:100|linebreaksbr }}</td>
-                <td>{{ item.viewCount }}</td>
+                <td>{{ item.view_count }}</td>
+                <td>
+                  <a href="{% url 'comment' pk=item.pk %}">Comment</a>
+                </td>
               </tr>
               {% endfor %}
             </tbody>
@@ -60,3 +64,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+
