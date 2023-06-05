@@ -50,7 +50,7 @@
                 <td>{{ item.channel_title }}</td>
                 <td>{{ item.video_title }}</td>
                 <td>{{ item.description|truncatechars:100|linebreaksbr }}</td>
-                <td>{{ item.view_count }}</td>
+                <td>{{ item.viewCount }}</td>
                 <td>
                   <a href="{% url 'comment' pk=item.pk %}">Comment</a>
                 </td>
